@@ -4,9 +4,9 @@
   <head>
     <meta charset="utf-8">
 
-    <title>Node.js Introduction</title>
+    <title>Node.js Functions</title>
 
-    <meta name="description" content="Node.js Introduction">
+    <meta name="description" content="Node.js Functions">
     <meta name="author" content="Luis Ibanez">
 
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -35,15 +35,14 @@
       <div class="slides">
         <section>
           <h1>Node.js</h1>
-          <h2>Introduction</h2>
-          <h3>Functions</h3>
+          <h2>Functions</h2>
           <p>
             <small>Created by <a href="https://opensource.com/users/luis-ibanez">Luis Ibanez</a></small>
           </p>
         </section>
 
         <section>
-          <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/InteractiveResource" property="dct:title" rel="dct:type">Node.js Introduction</span>
+          <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/InteractiveResource" property="dct:title" rel="dct:type">Node.js Functions</span>
           <br>
            by
           <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">Luis Ibanez</span>
@@ -64,12 +63,6 @@
         </section>
 
         <section>
-          <h2>Node.js</h2>
-          <h3>Introduction</h3>
-        </section>
-
-
-        <section>
           <a href="#" class="image">
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/500px-Node.js_logo.svg.png" alt="Node.js logo">
           </a>
@@ -78,6 +71,98 @@
         <section>
           <h2>Javascript</h2>
           <h3>Server-Side</h3>
+        </section>
+
+        <section>
+          <h2>Node.js</h2>
+          <h3>Functions</h3>
+        </section>
+
+        <section>
+          <h3>Let's write</h3>
+          <h3>our first</h3>
+          <h3>Function</h3>
+        </section>
+
+        <section>
+          <p>Launch Vim from the command line prompt</p>
+          <p>to create a new file</p>
+          <pre><code data-trim contenteditable>
+vim helloworld.js
+          </code></pre>
+        </section>
+
+        <section>
+          <p>Type in the file the following</p>
+          <pre><code data-trim contenteditable>
+var sayhello = function() {
+  console.log("Hello World");
+}
+
+sayhello();
+          </code></pre>
+          <p>Save the file and quit the editor</p>
+        </section>
+
+        <section>
+          <p>Run the code with nodejs</p>
+          <pre><code data-trim contenteditable>
+nodejs helloworld.js
+          </code></pre>
+        </section>
+
+        <section>
+          <p>You should see</p>
+          <pre><code data-trim contenteditable>
+"Hello World"
+          </code></pre>
+        </section>
+
+        <section>
+          <h3>Let's write</h3>
+          <h3>our second</h3>
+          <h3>Function</h3>
+        </section>
+
+        <section>
+          <p>Launch Vim from the command line prompt</p>
+          <p>to create a new file</p>
+          <pre><code data-trim contenteditable>
+vim visitcountries.js
+          </code></pre>
+        </section>
+
+        <section>
+          <p>Type in the file the following</p>
+          <pre><code data-trim contenteditable>
+var visitcountries = function() {
+  var world = {};
+  world.asia = {};
+  world.africa = {};
+  world.america = {};
+  world.asia.japan = {};
+  world.asia.japan.tokyo = {};
+  world.asia.japan.kyoto = {};
+
+  console.log("Visited %j",world);
+}
+
+visitcountries();
+          </code></pre>
+        </section>
+
+        <section>
+          <p>Run the code with nodejs</p>
+          <pre><code data-trim contenteditable>
+nodejs visitcountries.js
+          </code></pre>
+        </section>
+
+        <section>
+          <p>You should see</p>
+          <pre><code data-trim contenteditable>
+Visited {"asia":{"japan":{"tokyo":{},"kyoto":{}}},"africa":{},"america":{}}
+          </code></pre>
         </section>
 
         <section>
