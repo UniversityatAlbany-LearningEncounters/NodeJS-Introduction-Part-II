@@ -166,6 +166,134 @@ Visited {"asia":{"japan":{"tokyo":{},"kyoto":{}}},"africa":{},"america":{}}
         </section>
 
         <section>
+          <h3>Let's improve</h3>
+          <h3>the formatting</h3>
+        </section>
+
+        <section>
+          <p>Edit the file</p>
+          <pre><code data-trim contenteditable>
+vim visitcountries.js
+          </code></pre>
+        </section>
+
+        <section>
+          <p>Replace the line:</p>
+          <pre><code data-trim contenteditable>
+  console.log("Visited %j",world);
+          </code></pre>
+          <p>With the line:</p>
+          <pre><code data-trim contenteditable>
+  console.log( JSON.stringify(world,null,2) );
+          </code></pre>
+        </section>
+
+        <section>
+          <p>Run the code again</p>
+          <pre><code data-trim contenteditable>
+nodejs visitcountries.js
+          </code></pre>
+        </section>
+
+        <section>
+          <h3>Let's get data</h3>
+          <h3>from the Web</h3>
+        </section>
+
+        <section>
+          <p>Create a new file</p>
+          <pre><code data-trim contenteditable>
+vim weatherdata.js
+          </code></pre>
+        </section>
+
+        <section>
+          <p>Type in the file the following</p>
+          <pre><code data-trim contenteditable>
+var http = require('http');
+
+var options = {
+  host: 'api.openweathermap.org',
+  path: '/data/2.5/weather?q=Albany,US'
+};
+
+callback = function(response) {
+
+  response.on('data', function (inputdata) {
+    var jsonstr = JSON.parse(inputdata);
+    console.log(JSON.stringify(jsonstr,null,2));
+  });
+
+}
+
+http.request(options, callback).end();
+          </code></pre>
+        </section>
+
+        <section>
+          <p>Save the file</p>
+          <p>and quit the editor</p>
+        </section>
+
+        <section>
+          <p>Run the new code</p>
+          <pre><code data-trim contenteditable>
+nodejs weatherdata.js
+          </code></pre>
+        </section>
+
+        <section>
+          <p>Analyze</p>
+          <p>the output</p>
+        </section>
+
+        <section>
+          <h3>Let's get data</h3>
+          <h3>for any city</h3>
+        </section>
+
+        <section>
+          <p>Edit the file</p>
+          <pre><code data-trim contenteditable>
+vim weatherdata.js
+          </code></pre>
+        </section>
+
+        <section>
+          <p>Edit the first lines to become:</p>
+          <pre><code data-trim contenteditable>
+var http = require('http');
+
+var city    = process.argv[2];
+var country = process.argv[3];
+
+var options = {
+  host: 'api.openweathermap.org',
+  path: '/data/2.5/weather?q=' + city + ',' + country
+};
+          </code></pre>
+        </section>
+
+        <section>
+          <p>Run the code again</p>
+          <p>but this time add the arguments</p>
+          <pre><code data-trim contenteditable>
+nodejs visitcountries.js Albany US
+          </code></pre>
+        </section>
+
+        <section>
+          <h3>Let's get</h3>
+          <h3>more data!</h3>
+        </section>
+
+        <section>
+          <h3>Find out</h3>
+          <h3>the weather</h3>
+          <h3>from three cities</h3>
+        </section>
+
+        <section>
           <h3>Breath!</h3>
         </section>
 
